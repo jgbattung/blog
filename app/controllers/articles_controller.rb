@@ -17,18 +17,26 @@ class ArticlesController < ApplicationController
         end
     end
 
-    private
-
-    def articles_params
-        params.require(:article).permit(:name, :body)
-    end
-
     def edit
+        @article.name = params[:name]
+        @article.body = params[:body]
+
+        if @article.save
+            redirect_to articles_path
+        else
+            render :new
+        end
     end
 
     def update
     end
 
     def delete
+    end
+
+    private
+
+    def articles_params
+        params.require(:article).permit(:name, :body)
     end
 end

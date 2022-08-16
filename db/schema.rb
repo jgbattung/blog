@@ -28,16 +28,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_16_100030) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "locations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "superpowers", force: :cascade do |t|
-    t.string "power_name"
-    t.integer "power_level"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end

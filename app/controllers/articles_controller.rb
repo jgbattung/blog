@@ -18,14 +18,6 @@ class ArticlesController < ApplicationController
     end
 
     def edit
-        @article.name = params[:name]
-        @article.body = params[:body]
-
-        if @article.save
-            redirect_to articles_path
-        else
-            render :new
-        end
     end
 
     def update
